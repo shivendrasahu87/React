@@ -5,19 +5,16 @@ import Menu from "./components/MenuComponent";
 import "./App.css";
 import { DISHES } from "./Shared/dishes";
 import Main from "./components/MainComponent";
+import { BrowserRouter } from "react-router-dom";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      dishes: DISHES,
-    };
-  }
   render() {
     return (
-      <div>
-        <Main />
-      </div>
+      <BrowserRouter>
+        <div>
+          <Main />
+        </div>
+      </BrowserRouter>
     );
   }
 }
