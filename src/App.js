@@ -1,20 +1,21 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
-import { Navbar, NavbarBrand } from "reactstrap";
-import Menu from "./components/MenuComponent";
 import "./App.css";
-import { DISHES } from "./Shared/dishes";
 import Main from "./components/MainComponent";
 import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import { ConfigureStore } from "./redux/configureState";
 
+const store = ConfigureStore();
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
-        <div>
-          <Main />
-        </div>
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <div>
+            <Main />
+          </div>
+        </BrowserRouter>
+      </Provider>
     );
   }
 }
